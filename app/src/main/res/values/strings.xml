@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">دلائل الخيرات</string>
+
+    <string name="first_page">دلائل الخيرات وشوارق الأنوار في ذكر الصلاة على النبي المختار ، كتاب من تأليف محمد بن سليمان الجزولي المتوفى سنة 870 هـ</string>
+    <string name="second_page">Welcome to the second page!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="new_game">new_game</string>
+
+
+    <string name="action_Monday">الاثنين</string>
+    <string name="action_Tuesday">الثلاثاء</string>
+    <string name="action_Wednesday">الأربعاء</string>
+    <string name="action_Thursday">الخميس</string>
+    <string name="action_Friday">الجمعة</string>
+    <string name="action_Saturday">السبت</string>
+    <string name="action_Sunday">الأحد</string>
+    <string name="action_Monday2">الإثنين الثاني</string>
+    <string name="action_Khatem">الختم</string>
+
+    <string name="action_Savepoint">أتذكر الصفحة</string>
+
+</resources>

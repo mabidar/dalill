@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item  android:id="@+id/action_Savepoint" android:icon="@drawable/savep" android:title="@string/action_Savepoint" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_Monday" android:title="@string/action_Monday"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Tuesday" android:title="@string/action_Tuesday"        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Wednesday" android:title="@string/action_Wednesday"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Thursday" android:title="@string/action_Thursday"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Friday" android:title="@string/action_Friday"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Saturday" android:title="@string/action_Saturday"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Sunday" android:title="@string/action_Sunday"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Monday2" android:title="@string/action_Monday2"         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_Khatem" android:title="@string/action_Khatem"         android:orderInCategory="100" app:showAsAction="never" />
+
+
+</menu>
