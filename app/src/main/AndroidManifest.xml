@@ -19,23 +19,8 @@
             </intent-filter>
         </activity>
 
-        <receiver android:process=":remote" android:name=".Alarm"></receiver>
 
-
-        <receiver android:name=".AutoStart">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name=".YourService"
-            android:enabled="true"
-            android:process=":your_service" >
-        </service>
     </application>
 
-    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
 
 </manifest>
