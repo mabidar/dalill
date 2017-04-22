@@ -20,26 +20,7 @@ public class Alarm extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
-        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "");
-        wl.acquire();
-
-        // Put here YOUR code.
-        NotificationCompat.Builder mBuilder =  new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.icon_app)
-                .setContentTitle("دلائل الخيرات")
-                .setContentText("تدكير الصلاة على النبي صلى الله عليه وسلم");
-        // Sets an ID for the notification
-        int mNotificationId = 001;
-        // Gets an instance of the NotificationManager service
-        NotificationManager mNotifyMgr =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        // Builds the notification and issues it.
-        mNotifyMgr.notify(mNotificationId, mBuilder.build());
-
-
-
-        wl.release();
+        // empty
     }
 
     public void setAlarm(Context context)
