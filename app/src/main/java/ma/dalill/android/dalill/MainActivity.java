@@ -35,6 +35,7 @@ package ma.dalill.android.dalill;
     import android.widget.ImageButton;
     import android.widget.ImageView;
     import android.widget.LinearLayout;
+    import android.widget.PopupMenu;
     import android.widget.RelativeLayout;
     import android.widget.ScrollView;
     import android.widget.TextView;
@@ -47,29 +48,27 @@ public class MainActivity extends ActionBarActivity {
     String day="Monday";
     int lineNumber=-1;
     String backgroundResource="bg";
+    String font="kufi";
+    boolean isHome=true;
 
     //Called when the activity is first created.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-    }
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        ImageButton buttonNext = (ImageButton) findViewById(R.id.imageButtonNext);
-
-        buttonNext.setOnClickListener(new View.OnClickListener(){
+       ImageButton buttonNext = (ImageButton) findViewById(R.id.imageButtonNext);
+       buttonNext.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-
-                displayNextTextView(day);
-
+                 displayNextTextView(day);
             }
 
         });
@@ -97,6 +96,32 @@ public class MainActivity extends ActionBarActivity {
             }
 
         });
+
+     /*   final   ImageButton buttonFont = (ImageButton) findViewById(R.id.fonts);
+        buttonFont.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                //Creating the instance of PopupMenu
+                PopupMenu popup = new PopupMenu(MainActivity.this, buttonFont);
+                //Inflating the Popup using xml file
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                //registering popup with OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        if("kufi".equals(item.getItemId())){
+                            font="kufi";
+                        }else if("maroc".equals(item.getItemId())){
+                            font="maroc";
+                        }
+                        return true;
+                    }
+                });
+
+                popup.show();//showing popup menu
+            }
+
+        });*/
 
 
 
@@ -139,7 +164,12 @@ public class MainActivity extends ActionBarActivity {
 
     private void setFontToText(TextView textView){
         // Font path
-        String fontPath = "fonts/DroidKufi-Regular.ttf";
+        String fontPath  =  "fonts/DroidKufi-Regular.ttf";
+         if("maroc".equals(font)){
+            fontPath= "fonts/Maroc_font.ttf";
+        }
+
+
 
         // Loading Font Face
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
@@ -187,6 +217,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
 private void displayIndex(){
+    isHome=false;
     TextView index =(TextView)findViewById(R.id.index);
     if(day.equals("Khatem")){
         index.setText("عدد الصفحة في الختم :" + (lineNumber + 1));
@@ -245,9 +276,27 @@ private void displayIndex(){
                 displayAlertDialogGoToSP();
 
             return super.onOptionsItemSelected(item);
-            }
-            default: {
-                break;
+            }case(R.id.font_kufi) :{
+                font="kufi";
+                if(isHome) {
+                    return true;
+                }else{
+                    lineNumber=lineNumber-1;
+                    displayNextTextView(day);
+                    return true;
+                }
+            }case(R.id.font_maroc) :{
+                font="maroc";
+                if(isHome) {
+                    return true;
+                }
+                else{
+                    lineNumber=lineNumber-1;
+                    displayNextTextView(day);
+                    return true;
+                }
+            }  default: {
+                return true ;
             }
         }
         lineNumber=-1;
@@ -308,6 +357,8 @@ private void goToSavedPoint(){
             }
 
 }
+
+
 
 private String getString(String day){
     if ( "Monday".equals(day) ){

@@ -11,6 +11,11 @@
     <item android:id="@+id/action_Sunday" android:title="@string/action_Sunday"         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_Monday2" android:title="@string/action_Monday2"         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_Khatem" android:title="@string/action_Khatem"         android:orderInCategory="100" app:showAsAction="never" />
-
+    <item android:id="@+id/fonts" android:icon="@drawable/icon_font"  app:showAsAction="ifRoom">
+        <menu android:id="@+id/fonts_sous_menu">
+             <item android:id="@+id/font_maroc" android:title="@string/maroc"/>
+             <item android:id="@+id/font_kufi" android:title="@string/kufi"/>
+        </menu>
+    </item>
 
 </menu>
