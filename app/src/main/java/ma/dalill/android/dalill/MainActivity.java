@@ -41,6 +41,9 @@ package ma.dalill.android.dalill;
     import android.widget.TextView;
     import android.widget.Toast;
 
+    import com.google.android.gms.ads.AdRequest;
+    import com.google.android.gms.ads.AdView;
+
     import ma.dalill.android.dalill.utils.FileUtil;
 
 
@@ -50,12 +53,16 @@ public class MainActivity extends ActionBarActivity {
     String backgroundResource="bg";
     String font="kufi";
     boolean isHome=true;
-
+    private AdView mAdView;
     //Called when the activity is first created.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
         }
 
     @Override
@@ -397,5 +404,29 @@ return "";
 
 
 }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
+    }
 
 }

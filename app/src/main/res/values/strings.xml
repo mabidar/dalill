@@ -20,5 +20,9 @@
     <string name="action_Khatem">الختم</string>
 
     <string name="action_Savepoint">أتذكر الصفحة</string>
+    <!-- AdMob ad unit IDs -->
+    <string name="banner_home_footer">ca-app-pub-9983460131910324/7195788896</string>
+    <string name="interstitial_full_screen">ca-app-pub-9983460131910324/7195788896</string>
+
 
 </resources>
